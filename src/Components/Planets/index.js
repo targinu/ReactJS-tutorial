@@ -1,15 +1,11 @@
 import React, { Fragment } from "react";
 import Planet from "./Planet";
 
-const showMessage = () => {
-  console.log("qualquer coisa")
-}
-
 const Planets = () => {
   return (
     <Fragment>
       <h3>Planet List</h3>
-      <button onClick={showMessage}>Clique</button>
+      <button>Clique</button>
       <hr></hr>
       <Planet
         name="Mercúrio"
@@ -22,6 +18,8 @@ const Planets = () => {
         matutino ou vespertino."
         link="https://pt.wikipedia.org/wiki/Merc%C3%BArio_(planeta)"
         img_url="https://media.istockphoto.com/id/183817880/pt/foto/mercury.jpg?s=1024x1024&w=is&k=20&c=Ie5migPD15F9REEdO7_Z7P_-cEIv7dZ3rUSPQE3zI6A="
+        title_with_underline={true}
+        gray={true}
       />
 
       <hr></hr>
@@ -32,6 +30,7 @@ const Planets = () => {
         uma região de corpos além da órbita de Netuno."
         link="https://pt.wikipedia.org/wiki/Plut%C3%A3o"
         img_url="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Pluto_in_True_Color_-_High-Res.jpg/280px-Pluto_in_True_Color_-_High-Res.jpg"
+        gray={true}
       />
     </Fragment>
   );
