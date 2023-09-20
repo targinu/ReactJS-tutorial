@@ -22,7 +22,6 @@ const Planets = () => {
         gray={true}
       />
 
-      <hr></hr>
       <Planet
         name="Plutão"
         description="Plutão, formalmente designado 134340 Plutão (símbolos: ⯓ e ♇) é um planeta anão do Sistema Solar e o nono maior e décimo mais massivo objeto 
