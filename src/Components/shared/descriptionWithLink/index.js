@@ -9,13 +9,14 @@ const DescriptionWithLink = (props) => {
       </Fragment>
     );
   } else {
-    return(
-        <Fragment>
-            <p><u>{props.description}</u></p>
-
-        </Fragment>
-    )
+    return (
+      <Fragment>
+        <p>
+          <u>{props.description}</u>
+        </p>
+      </Fragment>
+    );
   }
-}
+};
 
 export default DescriptionWithLink;
