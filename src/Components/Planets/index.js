@@ -1,10 +1,15 @@
 import React, { Fragment } from "react";
 import Planet from "./Planet";
 
+const showMessage = () => {
+  console.log("qualquer coisa")
+}
+
 const Planets = () => {
   return (
     <Fragment>
       <h3>Planet List</h3>
+      <button onClick={showMessage}>Clique</button>
       <hr></hr>
       <Planet
         name="Mercúrio"
