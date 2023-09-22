@@ -16,11 +16,11 @@ class Planets extends React.Component {
   }
 
   componentDidMount() {
-    getPlanets().then(data => {
-      this.setState(state => ({
-        planets: data['planets']
-      }))
-    })
+    getPlanets().then((data) => {
+      this.setState((state) => ({
+        planets: data["planets"],
+      }));
+    });
   }
 
   removeLast = () => {
@@ -45,14 +45,16 @@ class Planets extends React.Component {
         <button onClick={this.removeLast}>Remove Last</button>
         <button onClick={this.duplicateLastPlanet}>Duplicate Last</button>
         <hr></hr>
-        {this.state.planets.map((planet) => (
+        {this.state.planets.map((planet, index) => (
           <Planet
+            id={planet.id}
             name={planet.name}
             description={planet.description}
             link={planet.link}
             img_url={planet.img_url}
+            key={index}
           />
-       ))}
+        ))}
       </Fragment>
     );
   }
