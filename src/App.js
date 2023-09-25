@@ -1,10 +1,11 @@
-import React from 'react';
-import Planets from './Components/Planets';
+import React from "react";
+import Planets from "./Components/Planets";
+import RoutesWrapper from "./routes";
 
 function App() {
   return (
     <div>
-      <Planets/>
+      <RoutesWrapper />
     </div>
   );
 }
