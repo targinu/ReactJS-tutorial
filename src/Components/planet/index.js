@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import GrayImg from "../shared/gray_img";
 import DescriptionWithLink from "../shared/descriptionWithLink";
 import Form from "./form";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 async function getPlanet(id) {
   let response = await fetch(`http://localhost:3000/api/${id}.json`);
@@ -14,6 +14,7 @@ const Planet = () => {
   const [satellites, setSatellites] = useState([]);
   const [planet, setPlanet] = useState({});
   let { id } = useParams();
+  let navigate = useNavigate();
 
   useEffect(() => {
     getPlanet(id).then((data) => {
@@ -21,6 +22,10 @@ const Planet = () => {
       setPlanet(data["data"]);
     });
   }, []);
+
+  const goToPlanets = () => {
+    navigate("/");
+  };
 
   const addSatellite = (new_satellite) => {
     setSatellites([...satellites, new_satellite]);
@@ -56,6 +61,9 @@ const Planet = () => {
         ))}
       </ul>
       <hr></hr>
+      <button type="button" onClick={goToPlanets}>
+        Voltar a listagem
+      </button>
     </div>
   );
 };

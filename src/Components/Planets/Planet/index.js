@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import GrayImg from "../../shared/gray_img";
 import DescriptionWithLink from "../../shared/descriptionWithLink";
+import { Link } from "react-router-dom";
 
 const Planet = (props) => {
   let title;
@@ -14,9 +15,9 @@ const Planet = (props) => {
 
   return (
     <div>
-      {title}
+      <Link to={`/planet/${props.id}`}>{title}</Link>
+
       <div>
-        {" "}
         <DescriptionWithLink
           description={props.description}
           link={props.link}
