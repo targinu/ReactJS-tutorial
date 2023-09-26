@@ -13,14 +13,20 @@ async function getPlanet(id) {
 const Planet = () => {
   const [satellites, setSatellites] = useState([]);
   const [planet, setPlanet] = useState({});
+
   let { id } = useParams();
   let navigate = useNavigate();
 
   useEffect(() => {
-    getPlanet(id).then((data) => {
-      setSatellites(data["satellites"]);
-      setPlanet(data["data"]);
-    });
+    getPlanet(id).then(
+      (data) => {
+        setSatellites(data["satellites"]);
+        setPlanet(data["data"]);
+      },
+      (error) => {
+        navigate("/");
+      }
+    );
   }, []);
 
   const goToPlanets = () => {
