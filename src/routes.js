@@ -6,7 +6,7 @@ import PlanetsScreen from "./screens/planets";
 const AppRoutes = () => (
   <Routes>
     <Route path="/" element={<PlanetsScreen />} />
-    <Route path="/planet" element={<PlanetScreen />} />
+    <Route path="/planet/:id" element={<PlanetScreen />} />
   </Routes>
 );
 
